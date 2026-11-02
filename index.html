@@ -135,6 +135,17 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 .lab b{display:block;font-size:14px;margin-bottom:2px}
 .lab span{font-size:13px;color:var(--muted)}
 
+
+/* Services */
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+.svc h3{font-size:16px;margin:12px 0 6px}
+.svc p{color:var(--muted);font-size:14.5px}
+.svc .ico{width:42px;height:42px;border-radius:11px}
+.svc-cta{margin-top:18px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between}
+.svc-cta p{color:var(--muted);font-size:15px;margin:0}
+.btn.wa{background:#25d366;border-color:#25d366;color:#05301a}
+.btn.wa:hover{filter:brightness(1.05)}
+
 .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
 .reveal.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
@@ -147,6 +158,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
     <a class="brand" href="#top"><span class="logo mono">YA</span><span>Yazan Abu Alhayja</span></a>
     <nav class="links">
       <a href="#about" class="hide-sm">About</a>
+      <a href="#services" class="hide-sm">Services</a>
       <a href="#skills" class="hide-sm">Skills</a>
       <a href="#experience" class="hide-sm">Experience</a>
       <a href="#projects" class="hide-sm">Projects</a>
@@ -194,6 +206,21 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
           <div class="fact"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span><div><div class="k">Learning</div><div class="v">Cybersecurity analysis</div></div></div>
           <div class="fact"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg></span><div><div class="k">Focus</div><div class="v">IT infrastructure &amp; networks</div></div></div>
         </div>
+      </div>
+    </section>
+
+    <section id="services" class="reveal">
+      <div class="eyebrow">// services · BytesExchange</div>
+      <h2>Services for homes &amp; businesses</h2>
+      <div class="svc-grid">
+        <div class="card svc"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span><h3>Computer &amp; Laptop Repair</h3><p>Diagnosis and repair of hardware and software problems, upgrades, maintenance and system setup.</p></div>
+        <div class="card svc"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="8" cy="12" r="2.5"/><circle cx="16" cy="12" r="2.5"/></svg></span><h3>Graphics Card Repair</h3><p>Troubleshooting and repair of graphics cards, plus guidance on choosing the right hardware.</p></div>
+        <div class="card svc"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14 0M1.4 9a16 16 0 0 1 21.2 0M8.5 16.1a6 6 0 0 1 7 0"/><circle cx="12" cy="20" r="1"/></svg></span><h3>Network Setup</h3><p>Installing and configuring routers, switches, Wi-Fi and cabling so every device gets a stable connection.</p></div>
+        <div class="card svc"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></span><h3>CCTV &amp; Surveillance</h3><p>Installing IP cameras and NVRs, with remote monitoring from your phone for homes and businesses.</p></div>
+      </div>
+      <div class="card svc-cta">
+        <p>Need a repair, a network or a camera system? Message me and I'll get back to you quickly.</p>
+        <a class="btn wa" href="https://wa.me/970566089404?text=Hi%20Yazan%2C%20I%27d%20like%20to%20ask%20about%20a%20service" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg> Chat on WhatsApp</a>
       </div>
     </section>
 
@@ -315,6 +342,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
         <p>Looking for IT support, network setup or a CCTV installation — or hiring for an IT / sysadmin role? I'd be happy to hear from you.</p>
         <div class="cta">
           <a class="btn primary" href="mailto:Yazanaboalhijaco@gmail.com">Email me</a>
+          <a class="btn wa" href="https://wa.me/970566089404?text=Hi%20Yazan%2C%20I%27d%20like%20to%20ask%20about%20a%20service" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg> WhatsApp</a>
           <a class="btn" href="tel:+970566089404">+970 566 089 404</a>
           <a class="btn" href="https://linkedin.com/in/yazanalhija" target="_blank" rel="noopener">LinkedIn</a>
           <a class="btn" href="https://github.com/yazanabualhayja" target="_blank" rel="noopener">GitHub</a>
