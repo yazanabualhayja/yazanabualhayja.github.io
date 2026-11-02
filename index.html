@@ -115,6 +115,22 @@ h2{font-size:clamp(1.6rem,3.5vw,2rem);letter-spacing:-.02em;margin:6px 0 24px}
 footer{border-top:1px solid var(--border);padding:28px 0;color:var(--muted);font-size:14px}
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 
+
+/* Projects */
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.proj{display:flex;flex-direction:column;gap:10px}
+.proj .kind{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--accent)}
+.proj h3{font-size:17px;line-height:1.35}
+.proj p{color:var(--muted);font-size:14.5px}
+.proj ul{padding-left:18px;color:var(--muted);display:grid;gap:5px;font-size:14.5px}
+.proj .foot{margin-top:auto;display:flex;flex-wrap:wrap;gap:12px;align-items:center;padding-top:6px}
+.proj .foot a{font-size:14px;font-weight:600}
+.proj.wide{grid-column:1/-1}
+.labs{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px;margin-top:4px}
+.lab{border:1px solid var(--border);background:var(--surface-2);border-radius:10px;padding:12px 14px}
+.lab b{display:block;font-size:14px;margin-bottom:2px}
+.lab span{font-size:13px;color:var(--muted)}
+
 .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
 .reveal.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
@@ -129,6 +145,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
       <a href="#about" class="hide-sm">About</a>
       <a href="#skills" class="hide-sm">Skills</a>
       <a href="#experience" class="hide-sm">Experience</a>
+      <a href="#projects" class="hide-sm">Projects</a>
       <a href="#contact">Contact</a>
       <button class="icon-btn" id="themeBtn" aria-label="Toggle dark mode" title="Toggle theme">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
@@ -216,21 +233,71 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
       </div>
     </section>
 
+    <section id="projects" class="reveal">
+      <div class="eyebrow">// projects &amp; labs</div>
+      <h2>Projects &amp; hands-on labs</h2>
+      <div class="proj-grid">
+
+        <div class="card proj wide">
+          <div class="kind">NETWORKING · CISCO PACKET TRACER</div>
+          <h3>CCNA Network Labs</h3>
+          <p>A series of hands-on Cisco labs I completed during CCNA 200-301 training: building topologies, configuring routers and switches from scratch on the IOS command line, and finding and fixing faults.</p>
+          <div class="labs">
+            <div class="lab"><b>Device Functions</b><span>Switch MAC address tables and router routing tables</span></div>
+            <div class="lab"><b>Life of a Packet</b><span>DNS clients on routers, ARP cache behaviour across subnets</span></div>
+            <div class="lab"><b>Troubleshooting Methodology</b><span>Tracked down and fixed multiple faults that broke DNS</span></div>
+            <div class="lab"><b>Router &amp; Switch Basics</b><span>Hostnames, IP addressing, switch management IP and gateway, speed/duplex, CDP</span></div>
+            <div class="lab"><b>Routing Fundamentals</b><span>Connected, static, summary and default routes; longest prefix match</span></div>
+            <div class="lab"><b>Dynamic Routing Protocols</b><span>RIPv1 vs RIPv2 updates, comparing IGPs, administrative distance</span></div>
+            <div class="lab"><b>IGP Configuration</b><span>RIPv2 and EIGRP AS 100, default route to the ISP propagated to all routers</span></div>
+          </div>
+          <div class="foot"><span class="tag">Cisco IOS</span><span class="tag">Static routing</span><span class="tag">RIPv2</span><span class="tag">EIGRP</span><span class="tag">OSPF</span><span class="tag">CDP</span><span class="tag">ARP / DNS</span></div>
+        </div>
+
+        <div class="card proj">
+          <div class="kind">DOCKER · COMPOSE</div>
+          <h3>Multi-container Web App</h3>
+          <p>A Node.js web service running with PostgreSQL and Redis, set up with Docker Compose.</p>
+          <ul><li>Health checks so the app only starts once the database is ready</li>
+          <li>Named volumes so database and cache data survive container restarts</li>
+          <li>Endpoint that reports live database connectivity as JSON</li></ul>
+          <div class="foot"><span class="tag">Docker</span><span class="tag">Compose</span><span class="tag">PostgreSQL</span><span class="tag">Redis</span><span class="tag">Node.js</span></div>
+          <div class="foot"><a href="https://github.com/yazanabualhayja" target="_blank" rel="noopener">View on GitHub →</a></div>
+        </div>
+
+        <div class="card proj">
+          <div class="kind">CI/CD · GITHUB ACTIONS</div>
+          <h3>Go Service with a CI Pipeline</h3>
+          <p>A Go web service packaged in a multi-stage Docker build into a minimal <span class="mono">scratch</span> image, built and shipped automatically.</p>
+          <ul><li>GitHub Actions workflow runs on every push to main</li>
+          <li>Builds the image, starts it and smoke-tests it with <span class="mono">curl</span></li>
+          <li>Pushes tagged images to GitHub Container Registry</li></ul>
+          <div class="foot"><span class="tag">Go</span><span class="tag">Docker</span><span class="tag">GitHub Actions</span><span class="tag">GHCR</span></div>
+          <div class="foot"><a href="https://github.com/yazanabualhayja" target="_blank" rel="noopener">View on GitHub →</a></div>
+        </div>
+
+        <div class="card proj">
+          <div class="kind">SOFTWARE DESIGN</div>
+          <h3>Platten — Inventory &amp; Sales System</h3>
+          <p>An all-in-one system concept for retail businesses to manage products, stock, purchases, sales and suppliers.</p>
+          <ul><li>Barcodes, invoices, automatic stock updates, returns and low-stock alerts</li>
+          <li>Sales, profit and inventory-valuation reports</li>
+          <li>Role-based access for owners and employees</li></ul>
+          <div class="foot"><span class="tag">System design</span><span class="tag">RBAC</span><span class="tag">Reporting</span></div>
+        </div>
+
+      </div>
+    </section>
+
     <section id="credentials" class="reveal">
-      <div class="eyebrow">// education &amp; projects</div>
-      <h2>Education, certifications &amp; projects</h2>
+      <div class="eyebrow">// education &amp; certifications</div>
+      <h2>Education &amp; certifications</h2>
       <div class="grid2">
-        <div class="list">
           <div class="card item"><h3>B.Sc. Computer Engineering</h3><p>An-Najah National University · 2024<br>Specialization: Systems Administration and Backend Development</p></div>
+          <div class="list">
           <div class="card item"><h3>Cisco CCNA 200-301 <span class="badge">Completed</span></h3><p>Training course (Udemy, 42.5 hours). Certificate available upon request.</p></div>
           <div class="card item"><h3>Complete Hands-On Cybersecurity Analyst <span class="badge">In progress</span></h3><p>Udemy course</p></div>
-        </div>
-        <div class="card project"><h3>Platten — Inventory &amp; Sales Management System</h3>
-          <p class="co" style="color:var(--muted);font-size:14.5px;margin-top:4px">An all-in-one system for retail businesses to manage products, stock, purchases, sales and suppliers.</p>
-          <ul><li>Product &amp; barcode management, purchase and sales invoices, automatic stock updates, returns and low-stock alerts.</li>
-          <li>Daily and monthly sales reports, profit tracking, best-sellers and inventory valuation.</li>
-          <li>Role-based access control for owners and employees.</li>
-          <li>Subscription / license business model for multiple retailers.</li></ul></div>
+          </div>
       </div>
     </section>
 
